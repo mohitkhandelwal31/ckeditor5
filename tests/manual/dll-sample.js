@@ -4,12 +4,7 @@
  */
 
 /* globals console, window, document */
-
-import dll from '../../build/ckeditor5-dll.js';
-// import { Plugin } from 'ckeditor5/src/core';
-// import { Plugin } from '../../src/core';
-// import { Paragraph } from 'ckeditor5/src/paragraph';
-// import { ButtonView } from 'ckeditor5/src/ui';
+import 'ckeditor5/build/ckeditor5-dll.js';
 
 import { ClassicEditor } from '@ckeditor/ckeditor5-editor-classic/build/editor-classic.js';
 import { DecoupledEditor } from '@ckeditor/ckeditor5-editor-decoupled/build/editor-decoupled.js';
@@ -20,14 +15,11 @@ import { Essentials } from '@ckeditor/ckeditor5-essentials/build/essentials.js';
 import { Bold, Italic } from '@ckeditor/ckeditor5-basic-styles/build/basic-styles.js';
 import { HtmlEmbed } from '@ckeditor/ckeditor5-html-embed/build/html-embed.js';
 import { Image } from '@ckeditor/ckeditor5-image/build/image.js';
-// import { Table, TableToolbar, TableCellProperties, TableProperties } from '@ckeditor/ckeditor5-table/build/table.js';
+import { Table, TableToolbar, TableCellProperties, TableProperties } from '@ckeditor/ckeditor5-table/build/table.js';
 
-// const Plugin = dll('./packages/ckeditor5-core/src/plugin.js')
-const Plugin = dll( './src/core.js' );
-// import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
-
-console.log( Plugin );
-// console.log(dll)
+const { Plugin } = window.CKEditor5.dll( './src/core.js' );
+const { ButtonView } = window.CKEditor5.dll( './src/ui.js' );
+const { Paragraph } = window.CKEditor5.dll( './src/paragraph.js' );
 
 // Create ad-hoc plugin.
 class AdHocPlugin extends Plugin {
@@ -53,15 +45,15 @@ class AdHocPlugin extends Plugin {
 const config = {
 	extraPlugins: [
 		Essentials,
-		// Paragraph,
+		Paragraph,
 		Bold,
 		Italic,
 		Image,
 		HtmlEmbed,
-		// Table,
-		// TableToolbar,
-		// TableCellProperties,
-		// TableProperties,
+		Table,
+		TableToolbar,
+		TableCellProperties,
+		TableProperties,
 		AdHocPlugin
 	],
 	toolbar: [

@@ -50,7 +50,8 @@ const webpackConfig = {
 		path: path.join( ROOT_DIRECTORY, 'build' ),
 		filename: 'ckeditor5-dll.js',
 		library: [ 'CKEditor5', 'dll' ],
-		libraryTarget: 'umd'
+		// All DLL consumers expect that the DLL core will be attached to the `window` object, as the `CKEditor5` value.
+		libraryTarget: 'window'
 	},
 	plugins: [
 		new webpack.BannerPlugin( {
