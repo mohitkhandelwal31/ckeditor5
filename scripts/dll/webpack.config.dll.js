@@ -51,6 +51,7 @@ const webpackConfig = {
 		filename: 'ckeditor5-dll.js',
 		library: [ 'CKEditor5', 'dll' ],
 		// All DLL consumers expect that the DLL core will be attached to the `window` object, as the `CKEditor5` value.
+		// See the `scripts/dll/dll-loader.js` file.
 		libraryTarget: 'window'
 	},
 	plugins: [

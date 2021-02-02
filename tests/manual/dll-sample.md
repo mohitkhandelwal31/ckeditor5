@@ -1,26 +1,11 @@
-# DLL sample
+# DLL sample test
 
-The sample requires building:
+**This DLL sample test requires that the DLL core and DLL packages are built.**
 
-1. Base DLL using `yarn run build:dll`.
-2. The DLL consumer plugin `yarn run build:dll-sample`.
-3. *External* classic editor DLL builds from `packages/ckeditor5`.
-4. All DLL enabled plugins.
+To build the DLL core and packages, run `yarn run build:dll` and then refresh this page.
 
-You can run whole project DLL build running in the top-level directory:
-
-```shell
-yarn run build:dll
-```
-
-and then only in this directory:
-
-```shell
-yarn run build:dll-sample
-```
-
-Notes:
-
-* The order of steps 2 & 3 is not important.
-* If the interface of DLL is not changed (only the version update) the steps 2 & 3 _should be_ optional. In other words if the exports stays the same the DLL consumers do not need to be rebuilt.
-* Steps 1 & 2 can be run together as `yarn run build`.
+Expected results:
+* There should be no errors in the console.
+* Four editors should be initialized correctly: Classic, Decoupled, Inline, and Balloon.
+* Each editor should have the following features enabled and working: Bold, Italic, Insert table, Insert HTML, custom Ad-hoc button, and finally Undo and Redo.
+* Clicking the `Ad-hoc` button logs `It works!` in the console.

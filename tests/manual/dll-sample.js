@@ -35,7 +35,7 @@ class AdHocPlugin extends Plugin {
 				label: 'Ad-hoc'
 			} );
 
-			button.on( 'execute', () => console.log( 'It Works!' ) );
+			button.on( 'execute', () => console.log( 'It works!' ) );
 
 			return button;
 		} );
@@ -63,7 +63,6 @@ const config = {
 		'insertTable',
 		'htmlEmbed',
 		'|',
-		'a-button',
 		'ad-hoc-button',
 		'|',
 		'undo',
